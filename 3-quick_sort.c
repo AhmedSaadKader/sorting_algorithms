@@ -19,7 +19,7 @@ int partition(int *array, int low, int high, size_t size)
 	pivot = array[high];
 	i = low - 1;
 
-	for (j = low; j < high; j++)
+	for (j = low; j <= high - 1; j++)
 	{
 		if (array[j] < pivot)
 		{
@@ -33,7 +33,7 @@ int partition(int *array, int low, int high, size_t size)
 			}
 		}
 	}
-	if (high > (i + 1))
+	if (array[high] != array[(i + 1)])
 	{
 		temp = array[i + 1];
 		array[i + 1] = array[high];
